@@ -125,11 +125,13 @@ TODO: Nearfield compton imaging example
 > reasons why it has been so successful in the realm of data science: instead
 > of adding general features to a language designed for numerical and
 > scientific computing, here scientific features are added to a general-purpose
-> language. This broadens the scope of problems that can be addressed easily,
-> expands the sources of data that are readily accessible and increases the
-> size of the community that develops code for the platform.
+> language. This **broadens the scope of problems** that can be addressed easily,
+> **expands the sources of data** that are readily accessible and **increases the
+> size of the community that develops code for the platform**.
 >
 > [Scipy 1.0: fundamental algorithms for scientific computing in Python][scipy_paper]
+> 
+> \* Emphasis mine
 
 **See also:** [Jim Hugunin's position paper][hugunin] laying out the motivation
 and design principles for `Numeric` (ancestor of NumPy) in 1995(!)
