@@ -183,3 +183,32 @@ PyMODINIT_FUNC initsis(void) { // must be init<modulename> (init_cext => _cext)
     import_array(); // load numpy (effectively "import numpy") for use in this module 
 };
 ```
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+```python
+import time
+from SIS import sis
+
+class SISDAQThread:
+    def __init__(self, config_file):
+        self.hardware_started = False
+        self.paused = True  # state controlled via GUI button press
+        # Initialize hardware communication
+        sis.connectToDAQ()
+        sis.configuration(config_file)
+
+    def run(self):
+        if not self.hardware_started and not self.paused:
+            self.start_hardware()
+
+        if self.hardware_started and not self.paused:
+            timestamps, energies, channel_nos, trigger_values = sis.acquiredata()
+
+        # Validation + send to other processes for analysis
+
+    def start_hardware(self):
+        sis.startacquisition()
+        self.start_time = time.time()
+        self.hardware_started = True
+```
