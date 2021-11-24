@@ -62,10 +62,48 @@ I began my research career in the national lab system:
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
- - 2010: Started grad school at UC Berkeley in the Nuclear Engineering department
-   * Affiliated with the Applied Nuclear Physics group at LBNL
+ - 2010-2019: Grad school -> post-doc -> research scientist & lecturer
+   * UC Berkeley nuclear engineering department & the Applied Nuclear Physics
+     group at LBNL
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+I'm a nuclear engineer by training, specializing in radiation instrumentation;
+particularly gamma-ray spectroscopy and imaging.
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+### Real-time 3D gamma-ray mapping
+ - Scene data fusion (SDF): computer vision + gamma-ray imaging
+ - Applications in e.g. nuclear contamination remediation
+
+TODO: Fukushima image here
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+### Volumetric gamma-ray imaging
+ - Imaging modalities for e.g. nuclear safeguards or small-animal imaging
+
+TODO: Nearfield compton imaging example
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+## My background
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
- - 2016-2019: Post-doc -> research scientist -> UC Lecturer
-   * Maintained affiliation with LBNL.
+- Systems integration
+  * Interfacing with hardware, data acquisition systems
+  * Synchronizing & fusing data from disparate sources
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Real-time acquisition and analysis
+  * Performance!
+  * "Distributed" computing
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Workstation-scale computing
+  * Mobile (hand-held or cart-based) measurement systems
+  * Datasets usually O(GB) - not big data
