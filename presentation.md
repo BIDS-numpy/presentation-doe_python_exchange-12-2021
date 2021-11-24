@@ -33,5 +33,39 @@ DOE Python Exchange | 12/01/2021
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
-# A bit about me
+## The Question: Why Python
 
++++ {"slideshow": {"slide_type": "fragment"}}
+
+ - My personal take
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+ - Looking ahead...
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+## A bit about me...
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+I began my research career in the national lab system:
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+ - Summer 2008: SULI internship at Argonne National Laboratory
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+ - Summer 2009: Summer internship with the Nuclear Data Group at LLNL
+   * First exposure to Python
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+ - 2010: Started grad school at UC Berkeley in the Nuclear Engineering department
+   * Affiliated with the Applied Nuclear Physics group at LBNL
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+ - 2016-2019: Post-doc -> research scientist -> UC Lecturer
+   * Maintained affiliation with LBNL.
