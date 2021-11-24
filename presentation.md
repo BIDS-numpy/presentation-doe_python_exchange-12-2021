@@ -139,4 +139,47 @@ and design principles for `Numeric` (ancestor of NumPy) in 1995(!)
 [scipy_paper]: https://www.nature.com/articles/s41592-019-0686-2
 [hugunin]: http://hugunin.net/papers/hugunin95numpy.html
 
++++ {"slideshow": {"slide_type": "subslide"}}
 
+### Integrating with other languages
+
+Some use-cases:
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Providing high-level interface to low-level computations
+  * SciPy is a prime example, wraps many C/C++/Fortran libraries
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Performance
+  * High-performance functions/data structures (e.g. NumPy)
+  * Optimizing bottlenecks
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Interfacing with hardware and legacy code...
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+```cpp
+#include <Python.h>
+#include "numpy/arrayobject.h" // provides the numpy C API
+
+...
+
+static PyMethodDef SISMethods[] = {
+    {"connectToDAQ", (PyCFunction)wrap_connectToDAQ, METH_VARARGS, "Connect to SIS3150"},
+    {"configuration", (PyCFunction)wrap_configuration, METH_VARARGS, "Configure SIS3302"},
+    {"startacquisition", (PyCFunction)wrap_startacquisition, METH_VARARGS, "Start SIS3302"},
+    {"stopacquisition", (PyCFunction)wrap_stopacquisition, METH_VARARGS, "Stop SIS3302"},
+    {"acquiredata", (PyCFunction)wrap_acquiredata, METH_VARARGS, "Acquire data from SIS3302"},
+    {"acquireDataWithRaw", (PyCFunction)wrap_acquireDataWithRaw, METH_VARARGS, "Acquire edata and rdata from SIS3302"},
+    {NULL,NULL} 
+};
+
+PyMODINIT_FUNC initsis(void) { // must be init<modulename> (init_cext => _cext)
+    (void) Py_InitModule("sis", SISMethods);
+    import_array(); // load numpy (effectively "import numpy") for use in this module 
+};
+```
