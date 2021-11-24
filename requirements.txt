@@ -1,0 +1,6 @@
+numpy
+matplotlib
+# For presentation
+notebook
+jupytext
+rise
