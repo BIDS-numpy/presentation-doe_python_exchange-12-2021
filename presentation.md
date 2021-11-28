@@ -212,3 +212,118 @@ class SISDAQThread:
         self.start_time = time.time()
         self.hardware_started = True
 ```
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+## Optimize Developer time
+
+> Syntactically, Python code looks like executable pseudo code. Program
+> development using Python is 5-10 times faster than using C/C++...
+> Often, [a prototype program] is sufficiently functional and performs well
+> enough to be delivered as the final product, saving considerable development time.
+>
+> GVR, [Glue It All Together With Python][glue_python]
+
+[glue_python]: https://www.python.org/doc/essays/omg-darpa-mcc-position/
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Not to mention the time it takes to become proficient in the language!
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Powerful operations via simple, expressive syntax
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Incremental approach to data analysis
+  * Identify and address bottlenecks sequentially
+  * Simple path(s) for scaling up to larger problems
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Example...
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+### Digital signal processing for gamma-ray spectroscopy
+
+TODO: Visualize single preamp signal
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Signal amplitude reflects total deposited energy
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+![Time-domain analysis for trapezoidal signal shaping](_static/DSP_trapezoidal_overview.png)
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+Implement signal delay with slicing:
+
+```{code-cell} ipython3
+s = signal[:-(2*k+m)]
+sk = signal[k:-(m+k)]
+skm = signal[k+m:-k]
+s2km = signal[2*k+m]
+```
+
+Apply shaper:
+
+```{code-cell} ipython3
+S1 = ((s - sk) + (s2km - skm)).astype(np.int64)
+S2 = M * S1 + np.cumsum(S1)
+shaped = np.cumsum(S2)
+```
+
+A little cleanup:
+
+```{code-cell} ipython3
+# Pad result for time-alignment with input signal
+shaped = np.hstack((np.zeros(2*k+m), out))
+
+# Gain compensation
+shaped /= M*k
+```
+
+TODO: plot results
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+Scaling the analysis up to multiple signals is straightforward thanks to broadcasting:
+
+```{code-cell} ipython3
+def trapezoidal_shaper(signals, k, m, M):
+    signals = np.atleast_2d(signals)  # Each row represents a single measurement
+    # Apply delays to all signals
+    s = signal[..., :-(2*k+m)]
+    sk = signal[..., k:-(m+k)]
+    skm = signal[..., k+m:-k]
+    s2km = signal[..., 2*k+m]
+    # Apply shaper operations along appropriate axis
+    S1 = ((s - sk) + (s2km - skm)).astype(np.int64)
+    S2 = M * S1 + np.cumsum(S1, axis=1)
+    shaped = np.cumsum(S2, axis=1)
+    # Time-alignment and gain correction
+    shaped = np.hstack((np.zeros((signals.shape[0], 2*k+m)), out))
+    shaped /= M * k
+    return shaped
+```
+
+TODO: Visualize multiple signals
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+- Implementation of analysis is very near the original algorithm
+
+- Incremental approach: explore/test with subset, easily scale up
+
+- What about scaling further? Purpose-built tooling that interoperates with arrays!
+  * Big data - consider [dask][dask_doc].
+  * Performance bottlenecks - will GPU's help? Consider [cupy][cupy_doc].
+
+[dask_doc]: https://dask.org/
+[cupy_doc]: https://cupy.dev/
