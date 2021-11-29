@@ -504,7 +504,7 @@ Not *everything* belongs in scipy:
  - Lower the barrier for developing an ecosystem package
  - Development and community best-practices:
    * Testing, documentation, releases, governance, etc.
- - # TODO: Add link to prototype manual.scientific-python.org site
+ - TODO: Add link to prototype manual.scientific-python.org site
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
