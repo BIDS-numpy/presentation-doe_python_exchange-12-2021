@@ -419,3 +419,42 @@ TODO: Drop in Compton imaging reconstruction example
 ## Community
 
 The secret-sauce of scientific Python
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- The user-contributor model
+  * User input inherently a top priority
+  * Strong connection between development and usage
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Coherence
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+### Scientific Python Ecosystem
+
+![Scientific Python Ecosystem](_static/ecosystem.png)
+
+  * Projects built from or extend from same fundamental elements (e.g. `ndarray`)
+  * Interoperablity!
+  * Similar development practices
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+## Community
+
+The secret-sauce of scientific Python
+
+- The user-contributor model
+  * User input inherently a top priority
+  * Strong connection between development and usage
+
+- Coherence
+  * Projects built from or extend from same fundamental elements (e.g. `ndarray`)
+  * Interoperablity!
+  * Similar development practices
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Sustainability?
