@@ -5,3 +5,7 @@ tables
 notebook
 jupytext
 rise
+# For site
+sphinx
+myst-nb
+sphinx-book-theme
