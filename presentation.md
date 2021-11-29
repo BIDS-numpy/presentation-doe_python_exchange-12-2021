@@ -272,13 +272,21 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$")
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
+Select values for the parameters:
+
+```{code-cell} ipython3
+k = 450  # "Peaking time", in sample units (i.e. 4.5 microseconds)
+m = 60  # "Gap time", in sample units (i.e. 600 nanoseconds)
+M = 3600  # Estimate of exponential decay constant in sample units
+```
+
 Implement signal delay with slicing:
 
 ```{code-cell} ipython3
 s = signal[:-(2*k+m)]
 sk = signal[k:-(m+k)]
 skm = signal[k+m:-k]
-s2km = signal[2*k+m]
+s2km = signal[2*k+m:]
 ```
 
 Apply shaper:
@@ -293,13 +301,23 @@ A little cleanup:
 
 ```{code-cell} ipython3
 # Pad result for time-alignment with input signal
-shaped = np.hstack((np.zeros(2*k+m), out))
+shaped = np.hstack((np.zeros(2*k+m), shaped))
 
 # Gain compensation
 shaped /= M*k
 ```
 
-TODO: plot results
+How'd we do?
+
+```{code-cell} ipython3
+fig, ax = plt.subplots()
+ax.plot(signal, label="Input signal")
+ax.plot(shaped, label="Shaper output")
+ax.set_title("Digitzed raw signal and trapezoidal filter output")
+ax.set_ylabel("Amplitude (ADC units [arbitrary])")
+ax.set_xlabel("Sample # $10 \frac{ns}{sample}$")
+ax.legend();
+```
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
@@ -323,7 +341,23 @@ def trapezoidal_shaper(signals, k, m, M):
     return shaped
 ```
 
-TODO: Visualize multiple signals
+```{code-cell} ipython3
+# Load
+with tables.open_file("_data/digitized_preamp_signals.h5", "r") as hf:
+    print(f"Total number of signals in file: {hf.root.signals.shape[0]}")
+    signals = hf.root.signals.read()
+
+# Analyze
+shaped = trapezoidal_shaper(signals, k, m, M)
+
+# Visualize
+fig, ax = plt.subplots()
+ax.plot(signals[:10].T)
+ax.plot(shaped[:10].T)
+ax.set_title("Digitzed raw signal from a radiation spectrometer")
+ax.set_ylabel("Amplitude (ADC units [arbitrary])")
+ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
+```
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
