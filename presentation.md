@@ -458,3 +458,25 @@ The secret-sauce of scientific Python
 +++ {"slideshow": {"slide_type": "fragment"}}
 
 - Sustainability?
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+### A Healthy Ecosystem
+
+An initiative to ensure the sustainable growth of the ecosystem moving forward:
+https://scientific-python.org/
+
+#### Discussion
+
+Cross-project discussion forum: https://discuss.scientific-python.org/
+
+#### Coordination
+
+Mechanism for project coordination and loosely guiding ecosystem policy:
+[Scientific Python Ecosystem Coordination documents (SPECs)][spec].
+
+[spec]: https://scientific-python.org/specs/
+
+#### Growth
+
+Getting the best tools into the hands of the most users!
