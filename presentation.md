@@ -299,16 +299,16 @@ Scaling the analysis up to multiple signals is straightforward thanks to broadca
 def trapezoidal_shaper(signals, k, m, M):
     signals = np.atleast_2d(signals)  # Each row represents a single measurement
     # Apply delays to all signals
-    s = signal[..., :-(2*k+m)]
-    sk = signal[..., k:-(m+k)]
-    skm = signal[..., k+m:-k]
-    s2km = signal[..., 2*k+m]
+    s = signals[..., :-(2*k+m)]
+    sk = signals[..., k:-(m+k)]
+    skm = signals[..., k+m:-k]
+    s2km = signals[..., 2*k+m:]
     # Apply shaper operations along appropriate axis
     S1 = ((s - sk) + (s2km - skm)).astype(np.int64)
     S2 = M * S1 + np.cumsum(S1, axis=1)
     shaped = np.cumsum(S2, axis=1)
     # Time-alignment and gain correction
-    shaped = np.hstack((np.zeros((signals.shape[0], 2*k+m)), out))
+    shaped = np.hstack((np.zeros((signals.shape[0], 2*k+m)), shaped))
     shaped /= M * k
     return shaped
 ```
@@ -327,3 +327,5 @@ TODO: Visualize multiple signals
 
 [dask_doc]: https://dask.org/
 [cupy_doc]: https://cupy.dev/
+
++++ {"slideshow": {"slide_type": "slide"}}
