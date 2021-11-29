@@ -1,5 +1,6 @@
 numpy
 matplotlib
+tables
 # For presentation
 notebook
 jupytext

@@ -20,6 +20,7 @@ slideshow:
 ---
 import numpy as np
 import matplotlib.pyplot as plt
+import tables
 %matplotlib notebook
 ```
 
@@ -250,7 +251,16 @@ class SISDAQThread:
 
 ### Digital signal processing for gamma-ray spectroscopy
 
-TODO: Visualize single preamp signal
+```{code-cell} ipython3
+with tables.open_file("_data/digitized_preamp_signals.h5") as hf:
+    signal = hf.root.signals[0, ...]
+
+fig, ax = plt.subplots()
+ax.plot(signal)
+ax.set_title("Digitzed raw signal from a radiation spectrometer")
+ax.set_ylabel("Amplitude (ADC units [arbitrary])")
+ax.set_xlabel("Sample # $10 \frac{ns}{sample}$")
+```
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
