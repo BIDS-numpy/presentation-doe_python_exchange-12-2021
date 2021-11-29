@@ -9,3 +9,4 @@ rise
 sphinx
 myst-nb
 sphinx-book-theme
+ghp-import
