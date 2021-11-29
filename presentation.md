@@ -480,3 +480,32 @@ Mechanism for project coordination and loosely guiding ecosystem policy:
 #### Growth
 
 Getting the best tools into the hands of the most users!
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+### The National Labs
+
+An example: the [SuperLU](https://portal.nersc.gov/project/sparse/superlu/)
+sparse matrix factorization package.
+ - Developed and hosted by the national labs
+ - Available in [`scipy.sparse.linalg`][scipy-superlu]
+
+[scipy-superlu]: https://github.com/scipy/scipy/tree/master/scipy/sparse/linalg/_dsolve
+
+Benefits users *and* developers.
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+### Removing barriers to contributing
+
+Engaging with the wider scientific Python community: https://discuss.scientific-python.org/
+
+Not *everything* belongs in scipy:
+ - Lower the barrier for developing an ecosystem package
+ - Development and community best-practices:
+   * Testing, documentation, releases, governance, etc.
+ - # TODO: Add link to prototype manual.scientific-python.org site
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+Thank you!
