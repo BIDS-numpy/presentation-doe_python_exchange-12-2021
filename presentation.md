@@ -373,3 +373,49 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
 [cupy_doc]: https://cupy.dev/
 
 +++ {"slideshow": {"slide_type": "slide"}}
+
+## An effective language for communicating STEM concepts
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+![List-mode maximum likelihood expectation maximization](mlem_eqn.png)
+
+*An equation for list-mode maximum likelihood expectation maximization (MLEM)*
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+```{code-cell}
+def compute_em_iteration(λ, α, s):
+    term_one = 1 / (α @ λ)
+    term_two = α.T @ term_one
+    return (λ / s) * term_two
+```
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Minimal cruft
+- and executable, of course!
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+TODO: Drop in Compton imaging reconstruction example
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+### Reproducibility
+
+- Reproducibility of results
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Reproducibility (and extensibility) of techniques
+  * Readability is important!
+  * Design and development practices
+    - Sensible organization & usable interface
+    - Well-tested!
+
++++ {"slideshow": {"slide_type": "slide"}}
+
+## Community
+
+The secret-sauce of scientific Python
