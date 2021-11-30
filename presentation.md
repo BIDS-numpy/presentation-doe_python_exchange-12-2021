@@ -23,7 +23,25 @@ import scipy as sp  # Subpackages still need to be imported individually
 import matplotlib.pyplot as plt
 from matplotlib import cm
 import tables
+```
+
+```{code-cell} ipython3
+---
+slideshow:
+  slide_type: '-'
+tags: [remove-cell]
+---
+# For presentation
 %matplotlib notebook
+```
+
+```{code-cell} ipython3
+---
+slideshow:
+  slide_type: skip
+---
+# For website
+%matplotlib inline
 ```
 
 +++ {"slideshow": {"slide_type": "slide"}}
