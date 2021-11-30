@@ -85,7 +85,10 @@ in my research projects.
  - Scene data fusion (SDF): computer vision + gamma-ray imaging
  - Applications in e.g. nuclear contamination remediation
 
-![Fukushima Cs-137 distribution reconstruction, rear parking lot](_static/fukushima_parkinglot_reconstruction_summary.png)
+<center>
+  <img alt="Fukushima Cs-137 distribution reconstruction, rear parking lot"
+   src="_static/fukushima_parkinglot_reconstruction_summary.png">
+</center>
 
 **Right:** *Aerial view of measurement area.* **Left:** *3D gamma-ray image reconstruction — Red line = path of imager through the scene, B/W dots = 3D point cloud model of the scene, Heatmap = image reconstruction; color scale corresponds to relative reconstructed intensity.*
 
@@ -94,7 +97,9 @@ in my research projects.
 ### Volumetric gamma-ray imaging
  - Imaging modalities for e.g. nuclear safeguards or small-animal imaging
 
-![Nearfield tomographic reconstruction of Cs-137 line source](_static/CCI2_nearfield_linesource.png)
+<center>
+  <img alt="Nearfield tomographic reconstruction of Cs-137 line source" src="_static/CCI2_nearfield_linesource.png">
+</center>
 
 *Demonstration of Compton imaging for applications in small animal molecular imaging.* **Left:** *A Cs-137 calibration source in the shape of a thin rod mounted on a rotating stage.* **Right:** *Three projections of reconstructed image from a tomographic measurement.*
 
@@ -284,7 +289,9 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
-![Time-domain analysis for trapezoidal signal shaping](_static/DSP_trapezoidal_overview.png)
+<center>
+  <img alt="Time-domain analysis for trapezoidal signal shaping" src="_static/DSP_trapezoidal_overview.png">
+</center>
 Algorithm described in *Digital synthesis of pulse shapes in real time for high resolution radiation spectroscopy* by **Valentin Jordanov** ([pdf link][jordanov_thesis])
 
 [jordanov_thesis]: https://deepblue.lib.umich.edu/bitstream/handle/2027.42/31506/0000428.pdf?sequence=1
@@ -419,7 +426,9 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-![List-mode maximum likelihood expectation maximization](_static/mlem_eqn.png)
+<center>
+  <img alt="List-mode maximum likelihood expectation maximization" src="_static/mlem_eqn.png">
+</center>
 
 *An equation for list-mode maximum likelihood expectation maximization (MLEM)*
 
@@ -602,7 +611,7 @@ Getting the best tools into the hands of the most users!
 The national labs have had a long history of developing and supporting open-source scientific Python
  - Numerical Python (aka `Numeric`, predecessor to NumPy) - LLNL 90's-00's
  - `NetworkX` got it's start at LANL
- - Many, many others, including but not limited to Python ([LFortran](https://lfortran.org/))
+ - Many, many others; including, but not limited to, Python ([LFortran](https://lfortran.org/))
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
@@ -615,7 +624,7 @@ sparse matrix factorization package.
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-Benefits users *and* developers.
+Benefits users *and* the original researchers!
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
@@ -627,6 +636,7 @@ Not *everything* belongs in `scipy`:
  - Lower the barrier for developing an ecosystem package
  - For new projects: development and community best-practices
    * Testing, documentation, releases, governance, etc.
+   * Maintenance and sustainability
  - An idea (beta): https://rossbar.github.io/manual.scientific-python.org/
 
 +++ {"slideshow": {"slide_type": "slide"}}
