@@ -177,7 +177,7 @@ Some use-cases:
 #include <Python.h>
 #include "numpy/arrayobject.h" // provides the numpy C API
 
-...
+...  // Defining all the wrapper functions
 
 static PyMethodDef SISMethods[] = {
     {"connectToDAQ", (PyCFunction)wrap_connectToDAQ, METH_VARARGS, "Connect to SIS3150"},
@@ -194,6 +194,8 @@ PyMODINIT_FUNC initsis(void) { // must be init<modulename> (init_cext => _cext)
     import_array(); // load numpy (effectively "import numpy") for use in this module 
 };
 ```
+
+Original wrapping work by Cameron Bates ([@crbates](https://github.com/crbates)), now at LANL, whom I credit with convincing me of the value of the Python C/API!
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
@@ -223,6 +225,14 @@ class SISDAQThread:
         self.start_time = time.time()
         self.hardware_started = True
 ```
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Incorporate into scripts, local GUIs, Web-UI 
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- Instantly gained platform-independence
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
@@ -394,6 +404,8 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
 
 - Incremental approach: explore/test with subset, easily scale up
 
++++ {"slideshow": {"slide_type": "fragment"}}
+
 - What about scaling further? Purpose-built tooling that interoperates with arrays!
   * Big data - consider [dask][dask_doc].
   * Performance bottlenecks - will GPU's help? Consider [cupy][cupy_doc].
@@ -424,8 +436,7 @@ def compute_em_iteration(λ, α, s):
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-- Minimal cruft
-- and executable, of course!
+- and of course, it's executable!
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
