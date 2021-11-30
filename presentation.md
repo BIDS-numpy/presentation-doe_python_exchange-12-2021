@@ -159,22 +159,24 @@ and design principles for `Numeric` (ancestor of NumPy) in 1995(!)
 
 ### Integrating with other languages
 
-Some use-cases:
++++ {"slideshow": {"slide_type": "fragment"}}
+
+- *Performance* - e.g. writing performance-critical chunks in low-level languages
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-- Providing high-level interface to low-level computations
-  * SciPy is a prime example, wraps many C/C++/Fortran libraries
+- *Extending* - adding custom algorithms or data structures (e.g. `ndarray`)
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-- Performance
-  * High-performance functions/data structures (e.g. NumPy)
-  * Optimizing bottlenecks
+- *Wrapping* - providing convenient, high-level interfaces to existing low-level code
+  * Common in e.g. `scipy` (BLAS, Eigen, etc.)
+  * **Legacy code** and software from vendors, e.g. commercial hardware
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-- Interfacing with hardware and legacy code...
+A fundamental feature of Python, and many additional tools to fit various use-cases:
+ - Cython, Pythran, numba, PyBind11, ...
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
