@@ -19,7 +19,9 @@ slideshow:
   slide_type: '-'
 ---
 import numpy as np
+import scipy as sp  # Subpackages still need to be imported individually
 import matplotlib.pyplot as plt
+from matplotlib import cm
 import tables
 %matplotlib notebook
 ```
@@ -418,7 +420,90 @@ def compute_em_iteration(λ, α, s):
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
-TODO: Drop in Compton imaging reconstruction example
+### Example: Gamma-ray image reconstruction
+
+**Compton imaging** is a specific modality of gamma-ray imaging
+ - Based on the physics of gamma-ray scattering
+
+Some fun quirks of this modality
+ - Each photon interaction results in a **cone** in the imaging space
+ - No lensing or collimation, inherently wide field-of-view
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+We'll use a simulated dataset that contains 1,000 photon interactions from a gamma-ray source directly in front of a Compton camera
+
+```{code-cell} ipython3
+---
+slideshow:
+  slide_type: fragment
+---
+import scipy.sparse
+fname = "_data/system_matrix_1000cones_4piSpace_simulated_5degConeOpenAngle.h5"
+img_shape = (181, 361)  # 4-pi imaging
+with tables.open_file(fname, "r") as hf:
+    system_matrix = sp.sparse.csr_matrix(hf.root.sysmat.read())
+system_matrix
+```
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+Let's take a look at a few of the cones to get a sense for what the image looks like:
+
+```{code-cell} ipython3
+---
+slideshow:
+  slide_type: fragment
+---
+subset = np.ravel(system_matrix[:10].sum(axis=0))  # Sum of 10 backprojected cones
+
+# Visualize
+fig, ax = plt.subplots()
+ax.imshow(subset.reshape(img_shape), cmap=cm.plasma)
+ax.set_title("Backprojection of 10 Compton cones")
+ax.set_xlabel("Azimuthal angle $\phi (^{\circ})$")
+ax.set_ylabel("Polar angle $\\theta (^{\circ})$");
+```
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+Now let's try our ML-EM reconstruction technique:
+
+```{code-cell} ipython3
+# Use the backprojection to initialize the reconstruction
+img = np.ravel(system_matrix.sum(axis=0))
+initial_img = img.copy()  # Pre-reconstruction, for comparison
+sensitivity = 1.0  # Ignore sensitivity for this simple example
+n_iter = 10
+
+for _ in range(n_iter):
+    img = compute_em_iteration(img, system_matrix, sensitivity)
+```
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+A quick qualitative comparison:
+
+```{code-cell} ipython3
+---
+slideshow:
+  slide_type: fragment
+---
+fig, ax = plt.subplots(1, 2, figsize=(16, 4))
+
+for a, im, t in zip(ax, (initial_img, img), ("Backprojection", "Reconstruction")):
+    a.imshow(im.reshape(img_shape), cmap=cm.plasma)
+    a.set_title(t)
+fig.tight_layout()
+```
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+### Takeaways
+
+- Scientific Python is excellent for communicating scientific ideas
+  * Minimal language cruft
+  * "Executable pseudo-code"
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
@@ -507,10 +592,7 @@ Getting the best tools into the hands of the most users!
 
 The national labs have had a long history of developing and supporting open-source scientific Python
  - Numerical Python (aka `Numeric`, predecessor to NumPy) - LLNL 90's-00's
- - `NetworkX` got it's start at LANL 
-
-
-
+ - `NetworkX` got it's start at LANL
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
