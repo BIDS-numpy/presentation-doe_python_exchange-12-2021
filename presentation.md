@@ -74,20 +74,29 @@ I began my research career in the national lab system:
 I'm a nuclear engineer by training, specializing in radiation instrumentation;
 particularly gamma-ray spectroscopy and imaging.
 
++++ {"slideshow": {"slide_type": "fragment"}}
+
+Open-source software, specifically scientific Python, was **the** key component
+in my research projects.
+
 +++ {"slideshow": {"slide_type": "subslide"}}
 
 ### Real-time 3D gamma-ray mapping
  - Scene data fusion (SDF): computer vision + gamma-ray imaging
  - Applications in e.g. nuclear contamination remediation
 
-TODO: Fukushima image here
+![Fukushima Cs-137 distribution reconstruction, rear parking lot](_static/fukushima_parkinglot_reconstruction_summary.png)
+
+**Right:** *Aerial view of measurement area.* **Left:** *3D gamma-ray image reconstruction — Red line = path of imager through the scene, B/W dots = 3D point cloud model of the scene, Heatmap = image reconstruction; color scale corresponds to relative reconstructed intensity.*
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
 ### Volumetric gamma-ray imaging
  - Imaging modalities for e.g. nuclear safeguards or small-animal imaging
 
-TODO: Nearfield compton imaging example
+![Nearfield tomographic reconstruction of Cs-137 line source](_static/CCI2_nearfield_linesource.png)
+
+*Demonstration of Compton imaging for applications in small animal molecular imaging.* **Left:** *A Cs-137 calibration source in the shape of a thin rod mounted on a rotating stage.* **Right:** *Three projections of reconstructed image from a tomographic measurement.*
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
