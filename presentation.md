@@ -462,7 +462,7 @@ Some fun quirks of this modality
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
-We'll use a simulated dataset that contains 1,000 photon interactions from a gamma-ray source directly in front of a Compton camera
+We'll use a simulated dataset that contains 100 photon interactions from a gamma-ray source directly in front of a Compton camera
 
 ```{code-cell} ipython3
 ---
@@ -470,7 +470,7 @@ slideshow:
   slide_type: fragment
 ---
 import scipy.sparse
-fname = "_data/system_matrix_1000cones_4piSpace_simulated_5degConeOpenAngle.h5"
+fname = "_data/system_matrix_100cones_4piSpace_simulated_5degConeOpenAngle.h5"
 img_shape = (181, 361)  # 4-pi imaging
 with tables.open_file(fname, "r") as hf:
     system_matrix = sp.sparse.csr_matrix(hf.root.sysmat.read())
