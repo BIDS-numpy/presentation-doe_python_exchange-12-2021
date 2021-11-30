@@ -100,8 +100,7 @@ TODO: Nearfield compton imaging example
 +++ {"slideshow": {"slide_type": "fragment"}}
 
 - Real-time acquisition and analysis
-  * Performance!
-  * "Distributed" computing
+  * Distributed computing: performance, load-balancing
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
@@ -113,7 +112,7 @@ TODO: Nearfield compton imaging example
 
 ## On to the question: Why Python?
 
-- General-purpose language: can address a wide range of problems & computational task
+- General-purpose language: can address a wide range of problems & computational tasks
 - Optimizes developer time
 - Effective language for the communication of scientific ideas
 - Community-based development model!
@@ -131,8 +130,8 @@ TODO: Nearfield compton imaging example
 > size of the community that develops code for the platform**.
 >
 > [Scipy 1.0: fundamental algorithms for scientific computing in Python][scipy_paper]
-> 
-> \* Emphasis mine
+ 
+\* Emphasis mine
 
 **See also:** [Jim Hugunin's position paper][hugunin] laying out the motivation
 and design principles for `Numeric` (ancestor of NumPy) in 1995(!)
@@ -243,13 +242,9 @@ class SISDAQThread:
   * Identify and address bottlenecks sequentially
   * Simple path(s) for scaling up to larger problems
 
-+++ {"slideshow": {"slide_type": "fragment"}}
-
-- Example...
-
 +++ {"slideshow": {"slide_type": "subslide"}}
 
-### Digital signal processing for gamma-ray spectroscopy
+### Example: Digital signal processing for gamma-ray spectroscopy
 
 ```{code-cell} ipython3
 with tables.open_file("_data/digitized_preamp_signals.h5") as hf:
@@ -259,7 +254,7 @@ fig, ax = plt.subplots()
 ax.plot(signal)
 ax.set_title("Digitzed raw signal from a radiation spectrometer")
 ax.set_ylabel("Amplitude (ADC units [arbitrary])")
-ax.set_xlabel("Sample # $10 \frac{ns}{sample}$")
+ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
 ```
 
 +++ {"slideshow": {"slide_type": "fragment"}}
@@ -269,6 +264,11 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$")
 +++ {"slideshow": {"slide_type": "subslide"}}
 
 ![Time-domain analysis for trapezoidal signal shaping](_static/DSP_trapezoidal_overview.png)
+Algorithm described in *Digital synthesis of pulse shapes in real time for high resolution radiation spectroscopy* by **Valentin Jordanov** ([pdf link][jordanov_thesis])
+
+[jordanov_thesis]: https://deepblue.lib.umich.edu/bitstream/handle/2027.42/31506/0000428.pdf?sequence=1
+
+- Simple operations: multiplication, addition, accumulation, delays (Z<sup>-n</sup>)
 
 +++ {"slideshow": {"slide_type": "subslide"}}
 
@@ -297,6 +297,8 @@ S2 = M * S1 + np.cumsum(S1)
 shaped = np.cumsum(S2)
 ```
 
++++ {"slideshow": {"slide_type": "subslide"}}
+
 A little cleanup:
 
 ```{code-cell} ipython3
@@ -306,6 +308,8 @@ shaped = np.hstack((np.zeros(2*k+m), shaped))
 # Gain compensation
 shaped /= M*k
 ```
+
++++ {"slideshow": {"slide_type": "subslide"}}
 
 How'd we do?
 
@@ -320,6 +324,8 @@ ax.legend();
 ```
 
 +++ {"slideshow": {"slide_type": "subslide"}}
+
+### Scaling up
 
 Scaling the analysis up to multiple signals is straightforward thanks to broadcasting:
 
@@ -342,6 +348,10 @@ def trapezoidal_shaper(signals, k, m, M):
 ```
 
 ```{code-cell} ipython3
+---
+slideshow:
+  slide_type: subslide
+---
 # Load
 with tables.open_file("_data/digitized_preamp_signals.h5", "r") as hf:
     print(f"Total number of signals in file: {hf.root.signals.shape[0]}")
@@ -349,7 +359,13 @@ with tables.open_file("_data/digitized_preamp_signals.h5", "r") as hf:
 
 # Analyze
 shaped = trapezoidal_shaper(signals, k, m, M)
+```
 
+```{code-cell} ipython3
+---
+slideshow:
+  slide_type: subslide
+---
 # Visualize
 fig, ax = plt.subplots()
 ax.plot(signals[:10].T)
@@ -360,6 +376,8 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
 ```
 
 +++ {"slideshow": {"slide_type": "subslide"}}
+
+### Takeaways
 
 - Implementation of analysis is very near the original algorithm
 
@@ -378,13 +396,15 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-![List-mode maximum likelihood expectation maximization](mlem_eqn.png)
+![List-mode maximum likelihood expectation maximization](_static/mlem_eqn.png)
 
 *An equation for list-mode maximum likelihood expectation maximization (MLEM)*
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-```{code-cell}
+Or, in NumPy:
+
+```{code-cell} ipython3
 def compute_em_iteration(λ, α, s):
     term_one = 1 / (α @ λ)
     term_two = α.T @ term_one
@@ -453,11 +473,11 @@ The secret-sauce of scientific Python
 - Coherence
   * Projects built from or extend from same fundamental elements (e.g. `ndarray`)
   * Interoperablity!
-  * Similar development practices
+  * Similar development practices amongst projects
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-- Sustainability?
+- **Sustainability?**
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
@@ -485,12 +505,23 @@ Getting the best tools into the hands of the most users!
 
 ### The National Labs
 
-An example: the [SuperLU](https://portal.nersc.gov/project/sparse/superlu/)
+The national labs have had a long history of developing and supporting open-source scientific Python
+ - Numerical Python (aka `Numeric`, predecessor to NumPy) - LLNL 90's-00's
+ - `NetworkX` got it's start at LANL 
+
+
+
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+Another example: the [SuperLU](https://portal.nersc.gov/project/sparse/superlu/)
 sparse matrix factorization package.
  - Developed and hosted by the national labs
  - Available in [`scipy.sparse.linalg`][scipy-superlu]
 
 [scipy-superlu]: https://github.com/scipy/scipy/tree/master/scipy/sparse/linalg/_dsolve
+
++++ {"slideshow": {"slide_type": "fragment"}}
 
 Benefits users *and* developers.
 
@@ -508,4 +539,4 @@ Not *everything* belongs in scipy:
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
-Thank you!
+## Thank you!
