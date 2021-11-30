@@ -228,7 +228,7 @@ class SISDAQThread:
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
-- Incorporate into scripts, local GUIs, Web-UI 
+- Incorporate into scripts, local GUIs, Web-UI
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
@@ -554,8 +554,11 @@ The secret-sauce of scientific Python
 +++ {"slideshow": {"slide_type": "fragment"}}
 
 - Coherence
+  * Projects built from or extend from same fundamental elements (e.g. `ndarray`)
+  * Interoperablity!
+  * Similar development practices amongst projects
 
-+++ {"slideshow": {"slide_type": "subslide"}}
++++ {"slideshow": {"slide_type": "skip"}}
 
 ### Scientific Python Ecosystem
 
@@ -564,21 +567,6 @@ The secret-sauce of scientific Python
   * Projects built from or extend from same fundamental elements (e.g. `ndarray`)
   * Interoperablity!
   * Similar development practices
-
-+++ {"slideshow": {"slide_type": "slide"}}
-
-## Community
-
-The secret-sauce of scientific Python
-
-- The user-contributor model
-  * User input inherently a top priority
-  * Strong connection between development and usage
-
-- Coherence
-  * Projects built from or extend from same fundamental elements (e.g. `ndarray`)
-  * Interoperablity!
-  * Similar development practices amongst projects
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
@@ -589,6 +577,7 @@ The secret-sauce of scientific Python
 ### A Healthy Ecosystem
 
 An initiative to ensure the sustainable growth of the ecosystem moving forward:
+
 https://scientific-python.org/
 
 #### Discussion
@@ -613,6 +602,7 @@ Getting the best tools into the hands of the most users!
 The national labs have had a long history of developing and supporting open-source scientific Python
  - Numerical Python (aka `Numeric`, predecessor to NumPy) - LLNL 90's-00's
  - `NetworkX` got it's start at LANL
+ - Many, many others, including but not limited to Python ([LFortran](https://lfortran.org/))
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
@@ -633,12 +623,14 @@ Benefits users *and* developers.
 
 Engaging with the wider scientific Python community: https://discuss.scientific-python.org/
 
-Not *everything* belongs in scipy:
+Not *everything* belongs in `scipy`:
  - Lower the barrier for developing an ecosystem package
- - Development and community best-practices:
+ - For new projects: development and community best-practices
    * Testing, documentation, releases, governance, etc.
- - TODO: Add link to prototype manual.scientific-python.org site
+ - An idea (beta): https://rossbar.github.io/manual.scientific-python.org/
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
 ## Thank you!
+
+Ideas? Feedback? Want to get involved in NumPy, NetworkX? Publish your own project? Please don't hesitate to contact me: rossbar@berkeley.edu or ping me on GitHub [@rossbar](https://github.com/rossbar/)!
