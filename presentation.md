@@ -313,6 +313,7 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
 <center>
   <img alt="Time-domain analysis for trapezoidal signal shaping" src="_static/DSP_trapezoidal_overview.png">
 </center>
+
 Algorithm described in *Digital synthesis of pulse shapes in real time for high resolution radiation spectroscopy* by **Valentin Jordanov** ([pdf link][jordanov_thesis])
 
 [jordanov_thesis]: https://deepblue.lib.umich.edu/bitstream/handle/2027.42/31506/0000428.pdf?sequence=1
