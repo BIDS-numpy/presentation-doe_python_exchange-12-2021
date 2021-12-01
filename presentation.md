@@ -553,20 +553,8 @@ fig.tight_layout()
 - Scientific Python is excellent for communicating scientific ideas
   * Minimal language cruft
   * "Executable pseudo-code"
-
-+++ {"slideshow": {"slide_type": "slide"}}
-
-### Reproducibility
-
-- Reproducibility of results
-
-+++ {"slideshow": {"slide_type": "fragment"}}
-
-- Reproducibility (and extensibility) of techniques
+- Reproducibility and extensibility
   * Readability is important!
-  * Design and development practices
-    - Sensible organization & usable interface
-    - Well-tested!
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
