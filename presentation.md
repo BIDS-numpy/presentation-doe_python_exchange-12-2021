@@ -23,6 +23,7 @@ import scipy as sp  # Subpackages still need to be imported individually
 import matplotlib.pyplot as plt
 from matplotlib import cm
 import tables
+import h5py
 ```
 
 ```{code-cell} ipython3
@@ -439,6 +440,41 @@ ax.set_xlabel("Sample # $10 \frac{ns}{sample}$");
 
 [dask_doc]: https://dask.org/
 [cupy_doc]: https://cupy.dev/
+
++++ {"slideshow": {"slide_type": "subslide"}}
+
+### A quick aside on interoperability
+
+```{code-cell} ipython3
+---
+slideshow:
+  slide_type: fragment
+---
+import dask.array as da
+
+# Data still on disk
+data = h5py.File("_data/digitized_preamp_signals.h5")["/signals"]
+
+chunked_signals = da.from_array(data, chunks=(276, 4096))
+chunked_signals
+```
+
+```{code-cell} ipython3
+---
+slideshow:
+  slide_type: subslide
+---
+# Note: Calling a function full of *numpy* functions on a *dask array*
+shaped = trapezoidal_shaper(chunked_signals, k, m, M)
+shaped
+```
+
++++ {"slideshow": {"slide_type": "fragment"}}
+
+Our analysis works on a new, non-numpy array object out-of-the-box! No changes/explicit conversions required!
+
+This works because Dask implements protocols provided by NumPy for interoperability with array objects.
+For more information, see e.g. [NEP 18](https://numpy.org/neps/nep-0018-array-function-protocol.html), which describes the `__array_function__` protocol.
 
 +++ {"slideshow": {"slide_type": "slide"}}
 

@@ -2,6 +2,8 @@ numpy
 scipy
 matplotlib
 tables
+dask
+h5py
 # For presentation
 notebook
 jupytext
