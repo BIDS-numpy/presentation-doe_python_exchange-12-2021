@@ -1,0 +1,1100 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python: the language for effective scientific computing &#8212; DOE Python Exchange: Why Python?</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="DOE Python Exchange - Why Python?" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">DOE Python Exchange: Why Python?</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Python: the language for effective scientific computing
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/presentation.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BIDS-numpy/presentation-doe_python_exchange-12-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-question-why-python">
+   The Question: Why Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-bit-about-me">
+   A bit about me…
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#real-time-3d-gamma-ray-mapping">
+     Real-time 3D gamma-ray mapping
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#volumetric-gamma-ray-imaging">
+     Volumetric gamma-ray imaging
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#my-background">
+   My background
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#on-to-the-question-why-python">
+   On to the question: Why Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-purpose-programming-language">
+   General purpose programming language
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrating-with-other-languages">
+     Integrating with other languages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimize-developer-time">
+   Optimize Developer time
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-digital-signal-processing-for-gamma-ray-spectroscopy">
+     Example: Digital signal processing for gamma-ray spectroscopy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scaling-up">
+     Scaling up
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#takeaways">
+     Takeaways
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-quick-aside-on-interoperability">
+     A quick aside on interoperability
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-effective-language-for-communicating-stem-concepts">
+   An effective language for communicating STEM concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-gamma-ray-image-reconstruction">
+     Example: Gamma-ray image reconstruction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Takeaways
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#community">
+   Community
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scientific-python-ecosystem">
+     Scientific Python Ecosystem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-healthy-ecosystem">
+     A Healthy Ecosystem
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#discussion">
+       Discussion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#coordination">
+       Coordination
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#growth">
+       Growth
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-national-labs">
+     The National Labs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-barriers-to-contributing">
+     Removing barriers to contributing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thank-you">
+   Thank you!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>  <span class="c1"># Subpackages still need to be imported individually</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">import</span> <span class="nn">tables</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For website</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="python-the-language-for-effective-scientific-computing">
+<h1>Python: the language for effective scientific computing<a class="headerlink" href="#python-the-language-for-effective-scientific-computing" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://bids.berkeley.edu/people/ross-barnowski">Ross Barnowski</a> <code class="docutils literal notranslate"><span class="pre">rossbar&#64;berkeley.edu</span></code> | <a class="reference external" href="https://github.com/rossbar">&#64;rossbar</a> on GitHub</p>
+<p>DOE Python Exchange | 12/01/2021</p>
+<div class="section" id="the-question-why-python">
+<h2>The Question: Why Python<a class="headerlink" href="#the-question-why-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>My personal take</p></li>
+</ul>
+<ul class="simple">
+<li><p>Looking ahead…</p></li>
+</ul>
+</div>
+<div class="section" id="a-bit-about-me">
+<h2>A bit about me…<a class="headerlink" href="#a-bit-about-me" title="Permalink to this headline">¶</a></h2>
+<p>I began my research career in the national lab system:</p>
+<ul class="simple">
+<li><p>Summer 2008: SULI internship at Argonne National Laboratory</p></li>
+</ul>
+<ul class="simple">
+<li><p>Summer 2009: Summer internship with the Nuclear Data Group at LLNL</p>
+<ul>
+<li><p>First exposure to Python</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>2010-2019: Grad school -&gt; post-doc -&gt; research scientist &amp; lecturer</p>
+<ul>
+<li><p>UC Berkeley nuclear engineering department &amp; the Applied Nuclear Physics
+group at LBNL</p></li>
+</ul>
+</li>
+</ul>
+<p>I’m a nuclear engineer by training, specializing in radiation instrumentation;
+particularly gamma-ray spectroscopy and imaging.</p>
+<p>Open-source software, specifically scientific Python, was <strong>the</strong> key component
+in my research projects.</p>
+<div class="section" id="real-time-3d-gamma-ray-mapping">
+<h3>Real-time 3D gamma-ray mapping<a class="headerlink" href="#real-time-3d-gamma-ray-mapping" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Scene data fusion (SDF): computer vision + gamma-ray imaging</p></li>
+<li><p>Applications in e.g. nuclear contamination remediation</p></li>
+</ul>
+<center>
+  <img alt="Fukushima Cs-137 distribution reconstruction, rear parking lot"
+   src="_static/fukushima_parkinglot_reconstruction_summary.png">
+</center>
+<p><strong>Right:</strong> <em>Aerial view of measurement area.</em> <strong>Left:</strong> <em>3D gamma-ray image reconstruction — Red line = path of imager through the scene, B/W dots = 3D point cloud model of the scene, Heatmap = image reconstruction; color scale corresponds to relative reconstructed intensity.</em></p>
+</div>
+<div class="section" id="volumetric-gamma-ray-imaging">
+<h3>Volumetric gamma-ray imaging<a class="headerlink" href="#volumetric-gamma-ray-imaging" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Imaging modalities for e.g. nuclear safeguards or small-animal imaging</p></li>
+</ul>
+<center>
+  <img alt="Nearfield tomographic reconstruction of Cs-137 line source" src="_static/CCI2_nearfield_linesource.png">
+</center>
+<p><em>Demonstration of Compton imaging for applications in small animal molecular imaging.</em> <strong>Left:</strong> <em>A Cs-137 calibration source in the shape of a thin rod mounted on a rotating stage.</em> <strong>Right:</strong> <em>Three projections of reconstructed image from a tomographic measurement.</em></p>
+</div>
+</div>
+<div class="section" id="my-background">
+<h2>My background<a class="headerlink" href="#my-background" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Systems integration</p>
+<ul>
+<li><p>Interfacing with hardware, data acquisition systems</p></li>
+<li><p>Synchronizing &amp; fusing data from disparate sources</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Real-time acquisition and analysis</p>
+<ul>
+<li><p>Distributed computing: performance, load-balancing</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Workstation-scale computing</p>
+<ul>
+<li><p>Mobile (hand-held or cart-based) measurement systems</p></li>
+<li><p>Datasets usually O(GB) - not big data</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="on-to-the-question-why-python">
+<h2>On to the question: Why Python?<a class="headerlink" href="#on-to-the-question-why-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>General-purpose language: can address a wide range of problems &amp; computational tasks</p></li>
+<li><p>Optimizes developer time</p></li>
+<li><p>Effective language for the communication of scientific ideas</p></li>
+<li><p>Community-based development model!</p></li>
+</ul>
+</div>
+<div class="section" id="general-purpose-programming-language">
+<h2>General purpose programming language<a class="headerlink" href="#general-purpose-programming-language" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>[This is] a distinguishing feature of Python for science and one of the
+reasons why it has been so successful in the realm of data science: instead
+of adding general features to a language designed for numerical and
+scientific computing, here scientific features are added to a general-purpose
+language. This <strong>broadens the scope of problems</strong> that can be addressed easily,
+<strong>expands the sources of data</strong> that are readily accessible and <strong>increases the
+size of the community that develops code for the platform</strong>.</p>
+<p><a class="reference external" href="https://www.nature.com/articles/s41592-019-0686-2">Scipy 1.0: fundamental algorithms for scientific computing in Python</a></p>
+</div></blockquote>
+<p>* Emphasis mine</p>
+<p><strong>See also:</strong> <a class="reference external" href="http://hugunin.net/papers/hugunin95numpy.html">Jim Hugunin’s position paper</a> laying out the motivation
+and design principles for <code class="docutils literal notranslate"><span class="pre">Numeric</span></code> (ancestor of NumPy) in 1995(!)</p>
+<div class="section" id="integrating-with-other-languages">
+<h3>Integrating with other languages<a class="headerlink" href="#integrating-with-other-languages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><em>Performance</em> - e.g. writing performance-critical chunks in low-level languages</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>Extending</em> - adding custom algorithms or data structures (e.g. <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>)</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>Wrapping</em> - providing convenient, high-level interfaces to existing low-level code</p>
+<ul>
+<li><p>Common in e.g. <code class="docutils literal notranslate"><span class="pre">scipy</span></code> (BLAS, Eigen, etc.)</p></li>
+<li><p><strong>Legacy code</strong> and software from vendors, e.g. commercial hardware</p></li>
+</ul>
+</li>
+</ul>
+<p>A fundamental feature of Python, and many additional tools to fit various use-cases:</p>
+<ul class="simple">
+<li><p>Cython, Pythran, numba, PyBind11, …</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Python.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;numpy/arrayobject.h&quot;</span><span class="c1"> // provides the numpy C API</span><span class="cp"></span>
+
+<span class="p">...</span><span class="w">  </span><span class="c1">// Defining all the wrapper functions</span>
+
+<span class="k">static</span><span class="w"> </span><span class="n">PyMethodDef</span><span class="w"> </span><span class="n">SISMethods</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;connectToDAQ&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">PyCFunction</span><span class="p">)</span><span class="n">wrap_connectToDAQ</span><span class="p">,</span><span class="w"> </span><span class="n">METH_VARARGS</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Connect to SIS3150&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;configuration&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">PyCFunction</span><span class="p">)</span><span class="n">wrap_configuration</span><span class="p">,</span><span class="w"> </span><span class="n">METH_VARARGS</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Configure SIS3302&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;startacquisition&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">PyCFunction</span><span class="p">)</span><span class="n">wrap_startacquisition</span><span class="p">,</span><span class="w"> </span><span class="n">METH_VARARGS</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Start SIS3302&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;stopacquisition&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">PyCFunction</span><span class="p">)</span><span class="n">wrap_stopacquisition</span><span class="p">,</span><span class="w"> </span><span class="n">METH_VARARGS</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Stop SIS3302&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;acquiredata&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">PyCFunction</span><span class="p">)</span><span class="n">wrap_acquiredata</span><span class="p">,</span><span class="w"> </span><span class="n">METH_VARARGS</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Acquire data from SIS3302&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s">&quot;acquireDataWithRaw&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">PyCFunction</span><span class="p">)</span><span class="n">wrap_acquireDataWithRaw</span><span class="p">,</span><span class="w"> </span><span class="n">METH_VARARGS</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Acquire edata and rdata from SIS3302&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="nb">NULL</span><span class="p">,</span><span class="nb">NULL</span><span class="p">}</span><span class="w"> </span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="n">PyMODINIT_FUNC</span><span class="w"> </span><span class="nf">initsis</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// must be init&lt;modulename&gt; (init_cext =&gt; _cext)</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="n">Py_InitModule</span><span class="p">(</span><span class="s">&quot;sis&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SISMethods</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">import_array</span><span class="p">();</span><span class="w"> </span><span class="c1">// load numpy (effectively &quot;import numpy&quot;) for use in this module </span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Original wrapping work by Cameron Bates (<a class="reference external" href="https://github.com/crbates">&#64;crbates</a>), now at LANL, whom I credit with convincing me of the value of the Python C/API!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">SIS</span> <span class="kn">import</span> <span class="n">sis</span>
+
+<span class="k">class</span> <span class="nc">SISDAQThread</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_file</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hardware_started</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">paused</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># state controlled via GUI button press</span>
+        <span class="c1"># Initialize hardware communication</span>
+        <span class="n">sis</span><span class="o">.</span><span class="n">connectToDAQ</span><span class="p">()</span>
+        <span class="n">sis</span><span class="o">.</span><span class="n">configuration</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">hardware_started</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">paused</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_hardware</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hardware_started</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">paused</span><span class="p">:</span>
+            <span class="n">timestamps</span><span class="p">,</span> <span class="n">energies</span><span class="p">,</span> <span class="n">channel_nos</span><span class="p">,</span> <span class="n">trigger_values</span> <span class="o">=</span> <span class="n">sis</span><span class="o">.</span><span class="n">acquiredata</span><span class="p">()</span>
+
+        <span class="c1"># Validation + send to other processes for analysis</span>
+
+    <span class="k">def</span> <span class="nf">start_hardware</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sis</span><span class="o">.</span><span class="n">startacquisition</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hardware_started</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Incorporate into scripts, local GUIs, Web-UI</p></li>
+</ul>
+<ul class="simple">
+<li><p>Instantly gained platform-independence</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="optimize-developer-time">
+<h2>Optimize Developer time<a class="headerlink" href="#optimize-developer-time" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Syntactically, Python code looks like executable pseudo code. Program
+development using Python is 5-10 times faster than using C/C++…
+Often, [a prototype program] is sufficiently functional and performs well
+enough to be delivered as the final product, saving considerable development time.</p>
+<p>GVR, <a class="reference external" href="https://www.python.org/doc/essays/omg-darpa-mcc-position/">Glue It All Together With Python</a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Not to mention the time it takes to become proficient in the language!</p></li>
+</ul>
+<ul class="simple">
+<li><p>Powerful operations via simple, expressive syntax</p></li>
+</ul>
+<ul class="simple">
+<li><p>Incremental approach to data analysis</p>
+<ul>
+<li><p>Identify and address bottlenecks sequentially</p></li>
+<li><p>Simple path(s) for scaling up to larger problems</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="example-digital-signal-processing-for-gamma-ray-spectroscopy">
+<h3>Example: Digital signal processing for gamma-ray spectroscopy<a class="headerlink" href="#example-digital-signal-processing-for-gamma-ray-spectroscopy" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s2">&quot;_data/digitized_preamp_signals.h5&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hf</span><span class="p">:</span>
+    <span class="n">signal</span> <span class="o">=</span> <span class="n">hf</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">signals</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Digitzed raw signal from a radiation spectrometer&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Amplitude (ADC units [arbitrary])&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Sample # $10 </span><span class="se">\f</span><span class="s2">rac</span><span class="si">{ns}{sample}</span><span class="s2">$&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/presentation_36_0.png" src="_images/presentation_36_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Signal amplitude reflects total deposited energy</p></li>
+</ul>
+<center>
+  <img alt="Time-domain analysis for trapezoidal signal shaping" src="_static/DSP_trapezoidal_overview.png">
+</center>
+<p>Algorithm described in <em>Digital synthesis of pulse shapes in real time for high resolution radiation spectroscopy</em> by <strong>Valentin Jordanov</strong> (<a class="reference external" href="https://deepblue.lib.umich.edu/bitstream/handle/2027.42/31506/0000428.pdf?sequence=1">pdf link</a>)</p>
+<ul class="simple">
+<li><p>Simple operations: multiplication, addition, accumulation, delays (Z<sup>-n</sup>)</p></li>
+</ul>
+<p>Select values for the parameters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">450</span>  <span class="c1"># &quot;Peaking time&quot;, in sample units (i.e. 4.5 microseconds)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1"># &quot;Gap time&quot;, in sample units (i.e. 600 nanoseconds)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mi">3600</span>  <span class="c1"># Estimate of exponential decay constant in sample units</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Implement signal delay with slicing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[:</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="n">m</span><span class="p">)]</span>
+<span class="n">sk</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="n">k</span><span class="p">:</span><span class="o">-</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="n">k</span><span class="p">)]</span>
+<span class="n">skm</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="n">m</span><span class="p">:</span><span class="o">-</span><span class="n">k</span><span class="p">]</span>
+<span class="n">s2km</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="n">m</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Apply shaper:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span> <span class="o">=</span> <span class="p">((</span><span class="n">s</span> <span class="o">-</span> <span class="n">sk</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">s2km</span> <span class="o">-</span> <span class="n">skm</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">S1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">S1</span><span class="p">)</span>
+<span class="n">shaped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">S2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A little cleanup:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pad result for time-alignment with input signal</span>
+<span class="n">shaped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="n">m</span><span class="p">),</span> <span class="n">shaped</span><span class="p">))</span>
+
+<span class="c1"># Gain compensation</span>
+<span class="n">shaped</span> <span class="o">/=</span> <span class="n">M</span><span class="o">*</span><span class="n">k</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>How’d we do?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Input signal&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">shaped</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Shaper output&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Digitzed raw signal and trapezoidal filter output&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Amplitude (ADC units [arbitrary])&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Sample # $10 </span><span class="se">\f</span><span class="s2">rac</span><span class="si">{ns}{sample}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/presentation_48_0.png" src="_images/presentation_48_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="scaling-up">
+<h3>Scaling up<a class="headerlink" href="#scaling-up" title="Permalink to this headline">¶</a></h3>
+<p>Scaling the analysis up to multiple signals is straightforward thanks to broadcasting:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trapezoidal_shaper</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+    <span class="n">signals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>  <span class="c1"># Each row represents a single measurement</span>
+    <span class="c1"># Apply delays to all signals</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">signals</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="n">m</span><span class="p">)]</span>
+    <span class="n">sk</span> <span class="o">=</span> <span class="n">signals</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span><span class="o">-</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="n">k</span><span class="p">)]</span>
+    <span class="n">skm</span> <span class="o">=</span> <span class="n">signals</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">k</span><span class="o">+</span><span class="n">m</span><span class="p">:</span><span class="o">-</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">s2km</span> <span class="o">=</span> <span class="n">signals</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="n">m</span><span class="p">:]</span>
+    <span class="c1"># Apply shaper operations along appropriate axis</span>
+    <span class="n">S1</span> <span class="o">=</span> <span class="p">((</span><span class="n">s</span> <span class="o">-</span> <span class="n">sk</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">s2km</span> <span class="o">-</span> <span class="n">skm</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">S2</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">S1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">shaped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">S2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Time-alignment and gain correction</span>
+    <span class="n">shaped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">signals</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="n">m</span><span class="p">)),</span> <span class="n">shaped</span><span class="p">))</span>
+    <span class="n">shaped</span> <span class="o">/=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">k</span>
+    <span class="k">return</span> <span class="n">shaped</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load</span>
+<span class="k">with</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="s2">&quot;_data/digitized_preamp_signals.h5&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hf</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total number of signals in file: </span><span class="si">{</span><span class="n">hf</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">signals</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">signals</span> <span class="o">=</span> <span class="n">hf</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">signals</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># Analyze</span>
+<span class="n">shaped</span> <span class="o">=</span> <span class="n">trapezoidal_shaper</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total number of signals in file: 1104
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">signals</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">shaped</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Digitzed raw signal from a radiation spectrometer&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Amplitude (ADC units [arbitrary])&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Sample # $10 </span><span class="se">\f</span><span class="s2">rac</span><span class="si">{ns}{sample}</span><span class="s2">$&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/presentation_52_0.png" src="_images/presentation_52_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="takeaways">
+<h3>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Implementation of analysis is very near the original algorithm</p></li>
+<li><p>Incremental approach: explore/test with subset, easily scale up</p></li>
+</ul>
+<ul class="simple">
+<li><p>What about scaling further? Purpose-built tooling that interoperates with arrays!</p>
+<ul>
+<li><p>Big data - consider <a class="reference external" href="https://dask.org/">dask</a>.</p></li>
+<li><p>Performance bottlenecks - will GPU’s help? Consider <a class="reference external" href="https://cupy.dev/">cupy</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="a-quick-aside-on-interoperability">
+<h3>A quick aside on interoperability<a class="headerlink" href="#a-quick-aside-on-interoperability" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+
+<span class="c1"># Data still on disk</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s2">&quot;_data/digitized_preamp_signals.h5&quot;</span><span class="p">)[</span><span class="s2">&quot;/signals&quot;</span><span class="p">]</span>
+
+<span class="n">chunked_signals</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">276</span><span class="p">,</span> <span class="mi">4096</span><span class="p">))</span>
+<span class="n">chunked_signals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 17.25 MiB </td>
+                        <td> 4.31 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1104, 4096) </td>
+                        <td> (276, 4096) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 5 Tasks </td>
+                        <td> 4 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> int32 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="93" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="10" x2="120" y2="10" />
+  <line x1="0" y1="21" x2="120" y2="21" />
+  <line x1="0" y1="32" x2="120" y2="32" />
+  <line x1="0" y1="43" x2="120" y2="43" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="43" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="43" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,43.174021777593246 0.0,43.174021777593246" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="63.174022" font-size="1.0rem" font-weight="100" text-anchor="middle" >4096</text>
+  <text x="140.000000" y="21.587011" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,21.587011)">1104</text>
+</svg>
+        </td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: Calling a function full of *numpy* functions on a *dask array*</span>
+<span class="n">shaped</span> <span class="o">=</span> <span class="n">trapezoidal_shaper</span><span class="p">(</span><span class="n">chunked_signals</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<span class="n">shaped</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+    <tr>
+        <td>
+            <table>
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 34.50 MiB </td>
+                        <td> 6.60 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1104, 4096) </td>
+                        <td> (276, 3136) </td>
+                    </tr>
+                    <tr>
+                        <th> Count </th>
+                        <td> 98 Tasks </td>
+                        <td> 8 Chunks </td>
+                    </tr>
+                    <tr>
+                    <th> Type </th>
+                    <td> float64 </td>
+                    <td> numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="93" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="10" x2="120" y2="10" />
+  <line x1="0" y1="21" x2="120" y2="21" />
+  <line x1="0" y1="32" x2="120" y2="32" />
+  <line x1="0" y1="43" x2="120" y2="43" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="43" style="stroke-width:2" />
+  <line x1="28" y1="0" x2="28" y2="43" />
+  <line x1="120" y1="0" x2="120" y2="43" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,43.174021777593246 0.0,43.174021777593246" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="63.174022" font-size="1.0rem" font-weight="100" text-anchor="middle" >4096</text>
+  <text x="140.000000" y="21.587011" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,21.587011)">1104</text>
+</svg>
+        </td>
+    </tr>
+</table></div></div>
+</div>
+<p>Our analysis works on a new, non-numpy array object out-of-the-box! No changes/explicit conversions required!</p>
+<p>This works because Dask implements protocols provided by NumPy for interoperability with array objects.
+For more information, see e.g. <a class="reference external" href="https://numpy.org/neps/nep-0018-array-function-protocol.html">NEP 18</a>, which describes the <code class="docutils literal notranslate"><span class="pre">__array_function__</span></code> protocol.</p>
+</div>
+</div>
+<div class="section" id="an-effective-language-for-communicating-stem-concepts">
+<h2>An effective language for communicating STEM concepts<a class="headerlink" href="#an-effective-language-for-communicating-stem-concepts" title="Permalink to this headline">¶</a></h2>
+<center>
+  <img alt="List-mode maximum likelihood expectation maximization" src="_static/mlem_eqn.png">
+</center>
+<p><em>An equation for list-mode maximum likelihood expectation maximization (MLEM)</em></p>
+<p>Or, in NumPy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_em_iteration</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span> <span class="n">α</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="n">term_one</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">α</span> <span class="o">@</span> <span class="n">λ</span><span class="p">)</span>
+    <span class="n">term_two</span> <span class="o">=</span> <span class="n">α</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">term_one</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">λ</span> <span class="o">/</span> <span class="n">s</span><span class="p">)</span> <span class="o">*</span> <span class="n">term_two</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>and of course, it’s executable!</p></li>
+</ul>
+<div class="section" id="example-gamma-ray-image-reconstruction">
+<h3>Example: Gamma-ray image reconstruction<a class="headerlink" href="#example-gamma-ray-image-reconstruction" title="Permalink to this headline">¶</a></h3>
+<p><strong>Compton imaging</strong> is a specific modality of gamma-ray imaging</p>
+<ul class="simple">
+<li><p>Based on the physics of gamma-ray scattering</p></li>
+</ul>
+<p>Some fun quirks of this modality</p>
+<ul class="simple">
+<li><p>Each photon interaction results in a <strong>cone</strong> in the imaging space</p></li>
+<li><p>No lensing or collimation, inherently wide field-of-view</p></li>
+</ul>
+<p>We’ll use a simulated dataset that contains 100 photon interactions from a gamma-ray source directly in front of a Compton camera</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.sparse</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;_data/system_matrix_100cones_4piSpace_simulated_5degConeOpenAngle.h5&quot;</span>
+<span class="n">img_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">181</span><span class="p">,</span> <span class="mi">361</span><span class="p">)</span>  <span class="c1"># 4-pi imaging</span>
+<span class="k">with</span> <span class="n">tables</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hf</span><span class="p">:</span>
+    <span class="n">system_matrix</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span><span class="n">hf</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">sysmat</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">system_matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;100x65341 sparse matrix of type &#39;&lt;class &#39;numpy.float32&#39;&gt;&#39;
+	with 2378244 stored elements in Compressed Sparse Row format&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a look at a few of the cones to get a sense for what the image looks like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">system_matrix</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># Sum of 10 backprojected cones</span>
+
+<span class="c1"># Visualize</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">subset</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">img_shape</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">plasma</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Backprojection of 10 Compton cones&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Azimuthal angle $\phi (^{\circ})$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Polar angle $</span><span class="se">\\</span><span class="s2">theta (^{\circ})$&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/presentation_68_0.png" src="_images/presentation_68_0.png" />
+</div>
+</div>
+<p>Now let’s try our ML-EM reconstruction technique:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the backprojection to initialize the reconstruction</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">system_matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">initial_img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># Pre-reconstruction, for comparison</span>
+<span class="n">sensitivity</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Ignore sensitivity for this simple example</span>
+<span class="n">n_iter</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iter</span><span class="p">):</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">compute_em_iteration</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">system_matrix</span><span class="p">,</span> <span class="n">sensitivity</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A quick qualitative comparison:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">im</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="p">(</span><span class="n">initial_img</span><span class="p">,</span> <span class="n">img</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Backprojection&quot;</span><span class="p">,</span> <span class="s2">&quot;Reconstruction&quot;</span><span class="p">)):</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">img_shape</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">plasma</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/presentation_72_0.png" src="_images/presentation_72_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Takeaways<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Scientific Python is excellent for communicating scientific ideas</p>
+<ul>
+<li><p>Minimal language cruft</p></li>
+<li><p>“Executable pseudo-code”</p></li>
+</ul>
+</li>
+<li><p>Reproducibility and extensibility</p>
+<ul>
+<li><p>Readability is important!</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="community">
+<h2>Community<a class="headerlink" href="#community" title="Permalink to this headline">¶</a></h2>
+<p>The secret-sauce of scientific Python</p>
+<ul class="simple">
+<li><p>The user-contributor model</p>
+<ul>
+<li><p>User input inherently a top priority</p></li>
+<li><p>Strong connection between development and usage</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Coherence</p>
+<ul>
+<li><p>Projects built from or extend from same fundamental elements (e.g. <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>)</p></li>
+<li><p>Interoperablity!</p></li>
+<li><p>Similar development practices amongst projects</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="scientific-python-ecosystem">
+<h3>Scientific Python Ecosystem<a class="headerlink" href="#scientific-python-ecosystem" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Scientific Python Ecosystem" src="_images/ecosystem.png" /></p>
+<ul class="simple">
+<li><p>Projects built from or extend from same fundamental elements (e.g. <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>)</p></li>
+<li><p>Interoperablity!</p></li>
+<li><p>Similar development practices</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Sustainability?</strong></p></li>
+</ul>
+</div>
+<div class="section" id="a-healthy-ecosystem">
+<h3>A Healthy Ecosystem<a class="headerlink" href="#a-healthy-ecosystem" title="Permalink to this headline">¶</a></h3>
+<p>An initiative to ensure the sustainable growth of the ecosystem moving forward:</p>
+<p>https://scientific-python.org/</p>
+<div class="section" id="discussion">
+<h4>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h4>
+<p>Cross-project discussion forum: https://discuss.scientific-python.org/</p>
+</div>
+<div class="section" id="coordination">
+<h4>Coordination<a class="headerlink" href="#coordination" title="Permalink to this headline">¶</a></h4>
+<p>Mechanism for project coordination and loosely guiding ecosystem policy:
+<a class="reference external" href="https://scientific-python.org/specs/">Scientific Python Ecosystem Coordination documents (SPECs)</a>.</p>
+</div>
+<div class="section" id="growth">
+<h4>Growth<a class="headerlink" href="#growth" title="Permalink to this headline">¶</a></h4>
+<p>Getting the best tools into the hands of the most users!</p>
+</div>
+</div>
+<div class="section" id="the-national-labs">
+<h3>The National Labs<a class="headerlink" href="#the-national-labs" title="Permalink to this headline">¶</a></h3>
+<p>The national labs have had a long history of developing and supporting open-source scientific Python</p>
+<ul class="simple">
+<li><p>Numerical Python (aka <code class="docutils literal notranslate"><span class="pre">Numeric</span></code>, predecessor to NumPy) - LLNL 90’s-00’s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> got it’s start at LANL</p></li>
+<li><p>Many, many others; including, but not limited to, Python (<a class="reference external" href="https://lfortran.org/">LFortran</a>)</p></li>
+</ul>
+<p>Another example: the <a class="reference external" href="https://portal.nersc.gov/project/sparse/superlu/">SuperLU</a>
+sparse matrix factorization package.</p>
+<ul class="simple">
+<li><p>Developed and hosted by the national labs</p></li>
+<li><p>Available in <a class="reference external" href="https://github.com/scipy/scipy/tree/master/scipy/sparse/linalg/_dsolve"><code class="docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code></a></p></li>
+</ul>
+<p>Benefits users <em>and</em> the original researchers!</p>
+</div>
+<div class="section" id="removing-barriers-to-contributing">
+<h3>Removing barriers to contributing<a class="headerlink" href="#removing-barriers-to-contributing" title="Permalink to this headline">¶</a></h3>
+<p>Engaging with the wider scientific Python community: https://discuss.scientific-python.org/</p>
+<p>Not <em>everything</em> belongs in <code class="docutils literal notranslate"><span class="pre">scipy</span></code>:</p>
+<ul class="simple">
+<li><p>Lower the barrier for developing an ecosystem package</p></li>
+<li><p>For new projects: development and community best-practices</p>
+<ul>
+<li><p>Testing, documentation, releases, governance, etc.</p></li>
+<li><p>Maintenance and sustainability</p></li>
+</ul>
+</li>
+<li><p>An idea (beta): <a class="reference external" href="https://rossbar.github.io/manual.scientific-python.org/">https://rossbar.github.io/manual.scientific-python.org/</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="thank-you">
+<h2>Thank you!<a class="headerlink" href="#thank-you" title="Permalink to this headline">¶</a></h2>
+<p>Ideas? Feedback? Want to get involved in NumPy, NetworkX? Publish your own project? Please don’t hesitate to contact me: rossbar&#64;berkeley.edu or ping me on GitHub <a class="reference external" href="https://github.com/rossbar/">&#64;rossbar</a>!</p>
+</div>
+</div>
+
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">DOE Python Exchange - Why Python?</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Ross Barnowski (@rossbar)<br/>
+        
+            &copy; Copyright 2021, Ross Barnowski (@rossbar).<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
