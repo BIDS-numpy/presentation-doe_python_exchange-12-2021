@@ -681,7 +681,7 @@ Not *everything* belongs in `scipy`:
  - For new projects: development and community best-practices
    * Testing, documentation, releases, governance, etc.
    * Maintenance and sustainability
- - An idea (beta): https://rossbar.github.io/manual.scientific-python.org/
+ - An idea (beta): <https://rossbar.github.io/manual.scientific-python.org/>
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
