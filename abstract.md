@@ -1,5 +1,3 @@
-# Python: the language for effective scientific computing
-
 In this presentation, I address the question "Why Python?" for scientific
 computing through the lens of my own personal experience as a researcher in
 the national lab system and contributor to open-source scientific Python
